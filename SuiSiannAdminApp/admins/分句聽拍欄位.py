@@ -13,7 +13,7 @@ class 分句欄位():
     def 分句聽拍(self, obj):
         return self.分句組合(
             obj.漢字.split('\n'),
-            obj.羅馬字.split('\n'),
+            obj.羅馬字含口語調.split('\n'),
             obj.kaldi切音時間網址(),
         )
 
@@ -63,7 +63,7 @@ class 分句欄位():
         return (
             '''<div>
         <textarea cols=120 rows=3 name='han'>{}</textarea>
-        <textarea cols=120 rows=4 name='lo' class='lomaji'>{}</textarea>'''
+        <textarea cols=120 rows=4 name='lo' class='phiaua'>{}</textarea>'''
             + (self.音檔html * kui) +
             '</div>'
         )

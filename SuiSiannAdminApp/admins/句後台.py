@@ -46,7 +46,7 @@ class 句後台(admin.ModelAdmin, 放音檔欄位, 分句欄位):
         han = self.tsuliau_rstrip(request.POST.getlist('han'))
         lo = self.tsuliau_rstrip(request.POST.getlist('lo'))
         obj.漢字 = '\n'.join(han)
-        obj.羅馬字 = '\n'.join(lo)
+        obj.羅馬字含口語調 = '\n'.join(lo)
 
         super(句後台, self).save_model(request, obj, form, change)
 

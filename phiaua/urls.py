@@ -13,19 +13,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.conf import settings
-from django.conf.urls.static import static
-from django.contrib import admin
-from django.urls import include, path
-from kaldi.view import kiamtsa, 傳音檔
+from django.urls import path
+from phiaua.views import khuan
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('kaldi/<kuid>', kiamtsa),
-    path(
-        r'音檔/<音檔編號>/<開始時間>/<結束時間>/audio.wav',
-        傳音檔
-    ),
-    path('phiaua/', include('phiaua.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('khuan/<khuan_id>', khuan),
+]
